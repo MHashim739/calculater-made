@@ -1,3 +1,4 @@
+"use strict";
 let save1 = document.getElementById('num1');
 console.log(save1);
 let save2 = document.getElementById('num2');
@@ -12,18 +13,11 @@ let save6 = document.getElementById('div');
 console.log(save6);
 let save7 = document.getElementById('result');
 console.log(save7);
-let clearButton = document.getElementById('clear');
-console.log(clearButton);
+function InputEmpty() {
+    if (save1.value == '') {
+    }
+}
 function add() {
-    if (save1.value == '' || save2.value == '') {
-        let valueSave = 'fill the input';
-        let valueSave1 = save7.innerHTML = valueSave;
-        save7.style.color = 'red';
-        return;
-    }
-    else if (save1.value && save2.value) {
-        save7.style.color = 'white';
-    }
     let save8 = +save1.value;
     console.log(save8);
     let save9 = +save2.value;
@@ -35,19 +29,8 @@ function add() {
     localStorage.setItem('saveInput2', save2.value);
     localStorage.setItem('saveInput3', save10.toString());
 }
-save3.addEventListener('click', function () {
-    add();
-});
+save3.addEventListener('click', add);
 function sub() {
-    if (save1.value == '' || save2.value == '') {
-        let valueSave = 'fill the input';
-        let valueSave1 = save7.innerHTML = valueSave;
-        save7.style.color = 'red';
-        return;
-    }
-    else if (save1.value && save2.value) {
-        save7.style.color = 'white';
-    }
     let save8 = +save1.value;
     console.log(save8);
     let save9 = +save2.value;
@@ -59,19 +42,8 @@ function sub() {
     localStorage.setItem('saveInput2', save2.value);
     localStorage.setItem('saveInput3', save10.toString());
 }
-save4.addEventListener('click', function () {
-    sub();
-});
+save4.addEventListener('click', sub);
 function mul() {
-    if (save1.value == '' || save2.value == '') {
-        let valueSave = 'fill the input';
-        let valueSave1 = save7.innerHTML = valueSave;
-        save7.style.color = 'red';
-        return;
-    }
-    else if (save1.value && save2.value) {
-        save7.style.color = 'white';
-    }
     let save8 = +save1.value;
     console.log(save8);
     let save9 = +save2.value;
@@ -83,19 +55,8 @@ function mul() {
     localStorage.setItem('saveInput2', save2.value);
     localStorage.setItem('saveInput3', save10.toString());
 }
-save5.addEventListener('click', function () {
-    mul();
-});
+save5.addEventListener('click', mul);
 function div() {
-    if (save1.value == '' || save2.value == '') {
-        let valueSave = 'fill the input';
-        let valueSave1 = save7.innerHTML = valueSave;
-        save7.style.color = 'red';
-        return;
-    }
-    else if (save1.value && save2.value) {
-        save7.style.color = 'white';
-    }
     let save8 = +save1.value;
     console.log(save8);
     let save9 = +save2.value;
@@ -107,9 +68,7 @@ function div() {
     localStorage.setItem('saveInput2', save2.value);
     localStorage.setItem('saveInput3', save10.toString());
 }
-save6.addEventListener('click', function () {
-    div();
-});
+save6.addEventListener('click', div);
 window.onload = function () {
     let save12 = localStorage.getItem('saveInput1');
     save1.value = save12 || '';
@@ -123,14 +82,3 @@ window.onload = function () {
         save7.innerHTML = 'Result ' + '';
     }
 };
-function clearAll() {
-    save1.value = '';
-    save2.value = '';
-    save7.innerHTML = 'Result';
-    localStorage.removeItem('saveInput1');
-    localStorage.removeItem('saveInput2');
-    localStorage.removeItem('saveInput3');
-}
-clearButton.addEventListener('click', clearAll);
-export {};
-//# sourceMappingURL=app.js.map

@@ -134,6 +134,14 @@ Calculator Card
     animation:cardShow .9s ease;
 
 }
+#clear{
+    width:100%;
+    margin-top:15px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+}
 
 @keyframes cardShow{
 
