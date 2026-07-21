@@ -102,7 +102,11 @@ function div() {
     console.log(save9);
     let save10 = save8 / save9;
     console.log(save10);
-    let save11 = save7.innerHTML = 'Result ' + save10;
+    save7.innerHTML = 'Result ' + save10;
+    if (save9 === 0) {
+        save7.innerHTML = 'Result ' + 'you check the value';
+        return;
+    }
     localStorage.setItem('saveInput1', save1.value);
     localStorage.setItem('saveInput2', save2.value);
     localStorage.setItem('saveInput3', save10.toString());
